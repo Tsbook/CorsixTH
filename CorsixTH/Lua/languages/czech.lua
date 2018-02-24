@@ -107,6 +107,8 @@ cheats_window = {
     vip = "Vytvořit VIP",
     epidemic = "Vytvořit nakažlivého pacienta",
     toggle_infected = "Zapnout/Vypnout ikony nakažení",
+    increase_prices = "Zvýšit ceny",
+    decrease_prices = "Snížit ceny",	
   },
 }
 menu_file_save = {
@@ -517,7 +519,7 @@ adviser = {
     researcher_needs_desk_2 = "Váš Výzkumník je potěšen vaší velkorysostí mu poskytnout přestávku při práci. Pokud jste zamýšleli, aby současně pracovalo více výzkumníků, musíte každému pořídit vlastní stůl pro práci.",
     researcher_needs_desk_3 = "Každý Výzkumník musí mít svůj vlastní pracovní stůl.",
     nurse_needs_desk_1 = "Každá Sestra potřebuje pro svoji práci vlastní stůl.",
-    nurse_needs_desk_2 = "Vaše Sestra je přímo nadšená množstvím volna, které ji poskytujete. Pokud jste měli v úmyslu její začlenění do pracovního procesu, pak muíste každé dát stůl z kterého mohou pracovat.",
+    nurse_needs_desk_2 = "Vaše Sestra je přímo nadšená množstvím volna, které ji poskytujete. Pokud jste měli v úmyslu její začlenění do pracovního procesu, pak musíte každé dát stůl z kterého mohou pracovat.",
     research_screen_open_2 = "Výzkum je v současné úrovni zakázán.",
     no_desk_1 = "Pokud chcete, aby lidé do Vaší nemocnice chodili, budete muset najmout recepční a postavit ji recepci, kde může pracovat!",
     queue_too_long_at_reception = "Máte příliš mnoho pacientů čekajících na přidělení místnosti v recepci. Umístěte další Recepci a zaměstnejte další Recepční.",
@@ -586,6 +588,10 @@ adviser = {
     no_desk_5 = "No už bylo načase, za chvíli by Vám měli začít přicházet pacienti!",
     no_desk_6 = "Recepční máte, tak co kdybyste ji postavili recepci, kde by mohla začít pracovat?",
     no_desk_7 = "Recepci jste postavili, a teď jenom najmout recepční. Bez ní do vaší nemocnice nevkročí ani noha!",
+    low_prices = "Za %s si účtujete příliš málo. Toto sice lidi do vaší nemocnice naláká, ale nepřinese vám to až takový výdělek.",
+    high_prices = "Poplatek za %s je vysoký. Tímto krátkodobě zvýšíte své příjmy, ale v konečném součtu lidé odejdou jinam.",
+    patient_not_paying = "Pacient odešel, aniž by za %s zaplatil. Prý je to příliš drahé!",
+    fair_prices = "Cena za %s se zdá být s ohledem na trh vyrovnaná a spravedlivá.",
   },
   earthquake = {
     ended = "Uf. Myslel jsem si, že tento byl Ten Velký - Byl %d stupně na Richterově Škále.",
@@ -1044,6 +1050,7 @@ object = {
   crash_trolley = "Manipulační vozík",
   swing_door1 = "Kyvadlové Dveře",
   skeleton = "Kostlivec",
+  rathole = "Krysí díra",
 }
 handyman_window = {
     all_parcels = "Všude",
@@ -1075,7 +1082,7 @@ tooltip = {
     browse_data = "Procházet pro jiné umístění instalace Theme Hospital. (současné umístění: %1%)",
     browse_font = "Procházet pro výběr jiného souboru s písmem (současné umístění: %1%)",
     font_location = "Umístění souboru s písmem, které je schopno zobrazit znaky Unicode vyžadované vaším jazykem. Pokud toto není zadáno, nebudete moci zvolit jazyky, které potřebují více znaků, než původní hra obsahuje. Příklad: ruština a čínština",
-    screenshots_location = "Standardně je složka se snímky obrazovky ve stejném umístění jako soubor s nastavením. Pokud toto není žádané, pak si můžete zvolit vlastní. Stačí zvolit adresář, který chete použít.",
+    screenshots_location = "Standardně je složka se snímky obrazovky ve stejném umístění jako soubor s nastavením. Pokud toto není žádané, pak si můžete zvolit vlastní. Stačí zvolit adresář, který chcete použít.",
     reset_to_default = "Resetovat adresář na jeho výchozí umístění",
     back = "Zavřít tuto nabídku a vrátit se zpět do nabídky Nastavení",
     music_location = "Vyberte umístění vašich mp3 souborů s hudbou. Adresář musí být vytvořen předem a pak ho můžete zde zvolit.",
@@ -1115,6 +1122,7 @@ tooltip = {
     audio_toggle = "Zapnout/vypnout",
     folder_button = "Možnosti složky",
     customise_button = "Další nastavení, pomocí kterých si můžete svoji hru přizpůsobit",
+    capture_mouse = "Klikněte pro povolení zachycení kurzoru myši v okně hry",
     },
   update_window = {
     download = "Přejít na stránku stahování pro získání nejnovější verze CorsixTH",
@@ -1143,6 +1151,8 @@ tooltip = {
       end_month = "Přeskočí na konec měsíce.",
       epidemic = "Vytvoří nakažlivého pacienta, který může způsobit epidemii",
       toggle_infected = "Zobrazí/Skryje ikony nakažení pro aktivní, zjištěné epidemie",
+      increase_prices = "Zvýšit všechny ceny o 50% (maximum je 200%)",
+      decrease_prices = "Snížit všechny ceny o 50% (minimum je 50%)",
     },
   },
   buy_objects_window = {
@@ -1385,7 +1395,7 @@ tooltip = {
     staff_stay = "Klikněte zde, aby určití zaměstnanci zůstali tam, kde je umístíte",
     staff_rest = "Jak moc musí být zaměstnanci unavení, než si můžou odpočinout",
     diag_termination = "Vyšetření pacienta bude pokračovat, dokud si nebudou Doktoři tak jistí, jako je procento ZASTAVENÍ PROCEDURY, nebo dokud nebudou vyzkoušeny všechny diagnostické přístroje",
-    diag_procedure = "Pokud je procento Doktorovy diagnózy nižší, než procento POSLAT DOMŮ, pacient bude poslán domů. Pokud je diagnóźa lepší než procento HÁDAT LÉČBU, pacient bude poslán na příslušnou léčbu",
+    diag_procedure = "Pokud je procento Doktorovy diagnózy nižší, než procento POSLAT DOMŮ, pacient bude poslán domů. Pokud je diagnóza lepší než procento HÁDAT LÉČBU, pacient bude poslán na příslušnou léčbu",
   },
   research_policy = {
     research_progress = "Vývoj směrem k dalšímu objevu v této kategorii: %1%/%2%",
@@ -1449,7 +1459,7 @@ tooltip = {
     jelly_vat = "Doktor používá Želé Nádrž k léčbě Želitidy",
     x_ray = "Doktor používá Rentgen k vyšetření Pacientů",
     inflation = "Doktor používá Nafukovárnu k léčbě Pacientů s Nafouknutými Hlavami",
-    ultrascan = "Doktor používá Ultrasken k vyšetření Pacientů",
+    ultrascan = "Doktor používá Ultraskener k vyšetření Pacientů",
     blood_machine = "Doktor používá Krevní Stroj k vyšetření Pacientů",
     tongue_clinic = "Doktor používá Místnost Sekáčku Jazyka k léčbě Ochablého Jazyka",
     fracture_clinic = "Sestra používá Oddělení Fraktur pro spravení Zlomených Kostí",
@@ -1464,7 +1474,7 @@ tooltip = {
     current_loan = "Současné nevyřízené půjčky",
     repay_5000 = "Splatit 5000€ bance",
     hospital_value = "Současná hodnota vaší nemocnice",
-    show_graph = "Zobrazit graf očekáváných plateb od %s",
+    show_graph = "Zobrazit graf očekávaných plateb od %s",
     insurance_owed = "Množství peněz, které Vám dluží %s",
     graph = "Graf očekávaných plateb od %s",
     inflation_rate = "Roční míra inflace",
@@ -1542,7 +1552,7 @@ tooltip = {
     entrance_left = "58 OB_ENT_LDOOR",
     operating_table = "30 OB_OP_TABLE",
     bed2 = "nepoužito",
-    cabinet = "Kartoték: obsahuje složky pacientů, poznámky a dokumenty výzkumu.",
+    cabinet = "Kartotéka: obsahuje složky pacientů, poznámky a dokumenty výzkumu.",
     console = "15 OB_SCANNER_CONSOLE",
     bed = "Postel: hodně nemocní lidé na těchto leží.",
     couch = "18 OB_COUCH",
@@ -1594,6 +1604,7 @@ tooltip = {
     crash_trolley = "20 OB_CRASH",
     swing_door1 = "52 OB_DOUBLE_DOOR1",
     skeleton = "Kostlivec: používán ke cvičebním účelům a na Halloween.",
+    rathole = "Domov krysí rodinky, jíž si oblíbila místní 'příjemné' prostředí a tak se zde zabydlela.",
   },
   custom_campaign_window = {
     choose_campaign = "Zvolte kampaň pro zobrazení informací o ní.",
@@ -1775,7 +1786,7 @@ diseases = {
   },
   sleeping_illness = {
     cure = "Léčba - Sestra podá vysokou dávku silného stimulantu.",
-    cause = "Příčina - abnormálně aktivní žláza spanku v patře úst.",
+    cause = "Příčina - abnormálně aktivní žláza spánku v patře úst.",
     name = "Spánková Choroba",
     symptoms = "Příznaky - Nepřekonatelná touha se všude vyspat.",
   },
@@ -1858,7 +1869,7 @@ diseases = {
     symptoms = "Příznaky - Červená tekutina v žilách, která se vypařuje při styku s oblečením.",
   },
   heaped_piles = {
-    cure = "Léčba - Příjemný, přesto účinný kyselinný nápoj rozpustí hemeroidy zevnitř.",
+    cure = "Léčba - Příjemný, přesto účinný kyselinový nápoj rozpustí hemeroidy zevnitř.",
     cause = "Příčina - postávání u vodních chladičů.",
     name = "Nahromaděné Hemeroidy",
     symptoms = "Příznaky - pacient cítí jako když on/ona sedí na pytlíku kuliček.",
@@ -1870,11 +1881,11 @@ diseases = {
     symptoms = "Příznaky - napůl strávené jídlo je vysíláno z pacienta v náhodných svazcích.",
   },
   diag_ultrascan = {
-    name = "Vyše Ultrasken",
+    name = "Vyše Ultraskener",
   },
   alien_dna = {
     cure = "Léčba - DNA je mechanicky odstraněna, vyčištěna od mimozemských částic a rychle nahrazena.",
-    cause = "Příčina - objímač obličeje vyzbrojen inteligentní mimozemskou krví.",
+    cause = "Příčina - objímač obličeje vyzbrojený inteligentní mimozemskou krví.",
     name = "Mimozemská DNA",
     symptoms = "Příznaky - postupná proměna v mimozemšťana a touha zničit naše města.",
   },
@@ -2026,7 +2037,7 @@ casebook = {
     build_ward = "Stále potřebujete postavit Nemocniční pokoj.",
     hire_psychiatrists = "Musíte zaměstnat Psychiatry.",
     cure_known = "Léčba.",
-    hire_doctors = "Potřebujete zaměst¨nat pár Doktorů.",
+    hire_doctors = "Potřebujete zaměstnat pár Doktorů.",
   },
   cured = "uzdravení",
 }
@@ -2486,7 +2497,7 @@ room_descriptions = {
   dna_fixer = {
     [1] = "Klinika DNA//",
     [2] = "Pacientům, s kterými si pohráli bytosti z jiné planety, musí být v této místnosti jejich DNA nahrazena. Přístroj Spravovač DNA je velmi složitý kus vybavení a bylo by rozumné s ním do místnosti umístit hasící přístroj, čistě pro případ.//",
-    [3] = "Přístroj Spravovač DNA vyžaduje pravidelnou kontrolu od Údržbáře. Také vyžaduje Doktra s Výzkumnou kvalifikací k jeho fungování. ",
+    [3] = "Přístroj Spravovač DNA vyžaduje pravidelnou kontrolu od Údržbáře. Také vyžaduje Doktora s Výzkumnou kvalifikací k jeho fungování. ",
   },
   training = {
     [1] = "Výuková místnost//",
@@ -2505,7 +2516,7 @@ room_descriptions = {
   },
   research = {
     [1] = "Výzkumné Oddělení//",
-    [2] = "Nové léky a léčby jsou vynalezeny a zlepšovány ve Výzkumném Oddělení. Toto je důležitá čát vaší nemocnice, a bude dělat zázraky ve vašich procentech vyléčených.//",
+    [2] = "Nové léky a léčby jsou vynalezeny a zlepšovány ve Výzkumném Oddělení. Toto je důležitá část vaší nemocnice, a bude dělat zázraky ve vašich procentech vyléčených.//",
     [3] = "Výzkumné Oddělení vyžaduje doktora s Výzkumnými dovednostmi. ",
   },
   inflation = {
@@ -2532,9 +2543,9 @@ room_descriptions = {
     [3] = "Oddělení Zlomenin vyžaduje Sestru. Také čas od času vyžaduje údržbu. ",
   },
   ultrascan = {
-    [1] = "Ultrasken//",
-    [2] = "Ultrasken je doslova to nejzazší v diagnostickém vybavení. Cena je sice vysoká, ale stojí za to, pokud chcete ve vaší nemocnici vynikající vyšetřování.//",
-    [3] = "The Ultraskener vyžaduje jakéhokoliv Doktora. Také vyžaduje údržbu. ",
+    [1] = "Ultraskener//",
+    [2] = "Ultraskener je doslova to nejzazší v diagnostickém vybavení. Cena je sice vysoká, ale stojí za to, pokud chcete ve vaší nemocnici vynikající vyšetřování.//",
+    [3] = "Ultraskener vyžaduje jakéhokoliv Doktora. Také vyžaduje údržbu. ",
   },
   staff_room = {
     [1] = "Místnost pro Zaměstnance//",
@@ -2642,6 +2653,7 @@ menu_options = {
   warmth_colors = "    BARVY TEPLOTY",
   twentyfour_hour_clock = "    24HODINOVÝ REŽIM  ",
   wage_increase = "    MZDOVÉ POŽADAVKY",
+  capture_mouse = "    ZACHYCOVAT MYŠ    ",
 }
 menu_options_warmth_colors = {
   choice_2 = "     MODRÁ ZELENÁ ČERVENÁ ",
@@ -2788,10 +2800,10 @@ rooms_short = {
   toilets = "Toalety",
   general_diag = "Obecné Vyšetření",
   hair_restoration = "Obnovovač Vlasů",
-  corridor_objects = "Objekty Chodby",
+  corridor_objects = "Objekty chodby",
   electrolysis = "Oddělení Elektrolýzy",
   scanner = "Skener",
-  research_room = "Výzkumné Odd.",
+  research_room = "Výzkumné Oddělení",
   cardiogram = "Kardiogram",
   destroyed = "Zničená",
   reception = "Recepce",
@@ -2800,7 +2812,7 @@ rooms_short = {
   jelly_vat = "Želé Nádrž",
   x_ray = "Rentgen",
   inflation = "Nafukovárna",
-  ultrascan = "Ultrasken",
+  ultrascan = "Ultraskener",
   blood_machine = "Krevní Stroj",
   tongue_clinic = "Odd. Ochablého Jazyka",
   fracture_clinic = "Oddělení Zlomenin",
@@ -2980,7 +2992,7 @@ fax = {
     close_text = "Jo, jo, jo!",
     text3 = "ČÍSLA  : DOKT %d  SESTRY %d  OBLAST %d  MÍSTNOSTI %d  CENA %d",
     text5 = "PŘISPÍVAJÍCÍ : DOKT %d  SESTRY %d  OBLAST %d  MÍSTNOSTI %d  CENA %d PROCENT",
-    text8 = "POHODLÍ %d LIDÍ ZVLÁDNUTO %d ANÍŽENÍ %d",
+    text8 = "POHODLÍ %d LIDÍ ZVLÁDNUTO %d SNÍŽENÍ %d",
     text10 = "ÚMRTÍ %d POVOLENO (MĚS) %d (%d) SNÍŽENÍ %d",
     text11 = "LIDÍ TENTO MĚSÍC %d",
   },
@@ -3108,7 +3120,7 @@ introduction_texts = {
     "Hodně štěstí!",
   level10 =
     "Stejně jako zvládnutí všech nemocí, které se v této oblasti vyskytují, Ministerstvo žádá, abyste strávil nějaký čas soustředěním se na účinnost Vašich léků. " ..
-    "Z ČasNemoci, Hlídacího Psa Zdravotnictví, se ozívají jisté stížnosti, takže abyste vypadali dobře, musíte zajistit, že Vaše léky jsou mimořádně účinné. " ..
+    "Z ČasNemoci, Hlídacího Psa Zdravotnictví, se ozývají jisté stížnosti, takže abyste vypadali dobře, musíte zajistit, že Vaše léky jsou mimořádně účinné. " ..
     "Také zajistěte, aby Vaše nemocnice nemusela být kárána. Ať ty úmrtí nejsou vysoká. " ..
     "Jako nápověda, možná byste měli vyhradit prostor pro Želé Nádrž. " ..
     "Zdokonalte všechny Vaše léky na alespoň 80 procentní účinnost, mějte reputaci 650 a ukryjte 500,000€ v bance, abyste vyhráli. ",
@@ -3200,6 +3212,7 @@ options_window = {
   folder = "Složky",
   customise = "Přizpůsobit",
   audio = "Globální audio",
+  capture_mouse = "Zachycovat myš",
 }
 folders_window = {
   new_th_location = "Zde můžete zadat novou instalační složku Theme Hospital. Jakmile ji zvolíte, hra bude restartována.",
@@ -3238,7 +3251,7 @@ customise_window = {
   back = "Zpět",
   movies = "Globální kontrola videí",
   volume = "Zkrátka snížení hlasitosti",
-  aliens = "PAcienti s mimozemskou DNA",
+  aliens = "Pacienti s mimozemskou DNA",
   fractured_bones = "Zlomené kosti",
 }
 custom_campaign_window = {
